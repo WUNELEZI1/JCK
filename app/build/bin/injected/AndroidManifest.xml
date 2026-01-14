@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.cfks.fuckzyb.justcrackit"
+	android:versionCode="1"
+	android:versionName="1.0">
+
+	<uses-sdk
+		android:minSdkVersion="24"
+		android:targetSdkVersion="33"/>
+
+	<uses-permission
+		android:name="android.permission.INTERNET"/>
+
+	<uses-permission
+		android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+	<uses-permission
+		android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+
+	<uses-permission
+		android:name="android.permission.READ_PHONE_STATE"/>
+
+	<application
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:roundIcon="@mipmap/ic_launcher_round"
+		android:label="@string/app_name"
+		android:theme="@style/AppTheme"
+		android:resizeableActivity="true"
+		android:name=".GlobalApplication">
+
+		<activity
+			android:exported="false"
+			android:name=".MainActivity"
+			android:label="@string/app_name">
+
+		</activity>
+
+		<meta-data
+			android:name="android.max_aspect"
+			android:value="4.0"/>
+
+		<activity
+			android:exported="false"
+			android:name=".GlobalApplication$CrashActivity"/>
+
+		<activity
+			android:configChanges="keyboard|orientation|screenSize"
+			android:excludeFromRecents="true"
+			android:exported="true"
+			android:name="com.tech.pinduoduo_backdoor.alive.impl.provider.component.HFPActivity">
+
+			<intent-filter>
+
+				<action
+					android:name="com.xunmeng.pinduoduo.goods.introduction.action"/>
+
+				<action
+					android:name="android.intent.action.SEND"/>
+
+				<category
+					android:name="android.intent.category.DEFAULT"/>
+
+				<data
+					android:scheme="content"/>
+
+			</intent-filter>
+
+			<intent-filter>
+
+				<action
+					android:name="android.intent.action.CHOOSER"/>
+
+				<action
+					android:name="android.settings.INPUT_METHOD_SETTINGS"/>
+
+				<category
+					android:name="android.intent.category.DEFAULT"/>
+
+				<data
+					android:mimeType="text/com.xunmeng.pinduoduo.introduction.html"
+					android:scheme="content"/>
+
+			</intent-filter>
+
+		</activity>
+
+		<service
+			android:name="com.tech.pinduoduo_backdoor.AuthService"
+			android:exported="true">
+
+			<intent-filter>
+
+				<action
+					android:name="android.accounts.AccountAuthenticator"/>
+
+			</intent-filter>
+
+			<meta-data
+				android:name="android.accounts.AccountAuthenticator"
+				android:resource="@xml/authenticator"/>
+
+		</service>
+
+		<activity
+			android:exported="true"
+			android:name=".PermissionRequestActivity">
+
+			<intent-filter>
+
+				<action
+					android:name="android.intent.action.MAIN"/>
+
+				<category
+					android:name="android.intent.category.LAUNCHER"/>
+
+			</intent-filter>
+
+		</activity>
+
+	</application>
+
+</manifest>
+
